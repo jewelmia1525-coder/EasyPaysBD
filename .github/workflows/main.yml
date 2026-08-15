@@ -25,7 +25,25 @@ jobs:
         with:
           gradle-version: '8.7'
 
+      - name: Create temporary release keystore
+        run: |
+          keytool -genkeypair \
+            -v \
+            -keystore "$RUNNER_TEMP/easypaybd-release.jks" \
+            -storepass "easypaybd-temp-password" \
+            -keypass "easypaybd-temp-password" \
+            -alias "easypaybd" \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 3650 \
+            -dname "CN=EasyPayBD, OU=EasyPayBD, O=EasyPayBD, L=Dhaka, ST=Dhaka, C=BD"
+
       - name: Build Release APK
+        env:
+          ANDROID_KEYSTORE_PATH: ${{ runner.temp }}/easypaybd-release.jks
+          ANDROID_KEYSTORE_PASSWORD: easypaybd-temp-password
+          ANDROID_KEY_ALIAS: easypaybd
+          ANDROID_KEY_PASSWORD: easypaybd-temp-password
         run: gradle assembleRelease
 
       - name: Upload Release APK
