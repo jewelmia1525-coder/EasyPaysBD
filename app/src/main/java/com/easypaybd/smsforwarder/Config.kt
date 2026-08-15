@@ -2,7 +2,7 @@ package com.easypaybd.smsforwarder
 
 object Config {
     // CHANGE THIS to your deployed website URL
-    const val BASE_URL = "https://easypaybd.lovable.app"
+    const val BASE_URL = "https://paysbd.lovable.app"
 
     const val LOGO_URL = "https://i.postimg.cc/7hbf6hfM/Chat-GPT-Image-Aug-14-2026-12-11-48-PM.png"
 
