@@ -1,0 +1,2 @@
+Upload the CONTENTS of this extracted folder to the ROOT of your GitHub repository.
+Then open Actions -> Build EasyPayBD Android APK -> Run workflow.

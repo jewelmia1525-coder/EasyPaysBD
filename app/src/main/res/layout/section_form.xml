@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <EditText android:id="@+id/name" android:hint="Name" android:textColorHint="#8AB4FF"
+        android:textColor="#FFF" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/description" android:hint="Description" android:textColorHint="#8AB4FF"
+        android:textColor="#FFF" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Sender (use * to catch any SMS)" android:textColor="#8AB4FF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+    <EditText android:id="@+id/sender" android:hint="* or number(s), comma separated"
+        android:textColor="#FFF" android:textColorHint="#556" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <EditText android:id="@+id/webhook" android:hint="Webhook URL"
+        android:textColor="#FFF" android:textColorHint="#556" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Advance parameters" android:textStyle="bold" android:textColor="#FFF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp"/>
+
+    <TextView android:text="SIM slot" android:textColor="#8AB4FF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <Spinner android:id="@+id/simSlot" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="JSON Payload Template" android:textColor="#8AB4FF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+    <EditText android:id="@+id/template" android:minLines="3" android:gravity="top"
+        android:textColor="#FFF" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Headers" android:textColor="#8AB4FF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+    <EditText android:id="@+id/headers" android:minLines="3" android:gravity="top"
+        android:textColor="#FFF" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Number of retries" android:textColor="#8AB4FF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
+    <EditText android:id="@+id/retries" android:inputType="number"
+        android:textColor="#FFF" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <CheckBox android:id="@+id/ignoreSsl" android:text="Ignore SSL/TLS certificate errors"
+        android:textColor="#FFF" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <CheckBox android:id="@+id/chunked" android:text="Chunked mode"
+        android:textColor="#FFF" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout>

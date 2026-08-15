@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#0B1220" android:padding="16dp">
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/headerLogo"
+                android:layout_width="120dp" android:layout_height="48dp"
+                android:layout_alignParentStart="true" android:contentDescription="logo"/>
+            <ImageButton android:id="@+id/heartBtn"
+                android:layout_width="44dp" android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ring_bg"
+                android:src="@android:drawable/ic_menu_share"
+                android:contentDescription="Heartbeat"/>
+        </RelativeLayout>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="EasyPayBD SMS Forwarder" android:textColor="#FFFFFF"
+            android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="12dp"/>
+
+        <TextView android:id="@+id/deviceIdView" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#8AB4FF" android:textSize="12sp"/>
+        <TextView android:id="@+id/deviceSecretView" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textColor="#8AB4FF" android:textSize="12sp"
+            android:layout_marginBottom="12dp"/>
+
+        <include layout="@layout/section_form"/>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center_vertical" android:layout_marginTop="16dp">
+            <Button android:id="@+id/save" android:text="Save"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+            <Button android:id="@+id/cancel" android:text="Cancel"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginStart="8dp"/>
+            <ImageView android:id="@+id/runBtn"
+                android:layout_width="72dp" android:layout_height="72dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/run_ring"
+                android:contentDescription="Run"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/status"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:textColor="#7FFFB1" android:textSize="14sp"
+            android:text="Idle"/>
+    </LinearLayout>
+</ScrollView>

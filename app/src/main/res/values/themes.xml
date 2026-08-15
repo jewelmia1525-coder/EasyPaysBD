@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.EasyPay" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#0B1220</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+    <style name="Theme.EasyPay.Splash" parent="Theme.EasyPay"/>
+</resources>
