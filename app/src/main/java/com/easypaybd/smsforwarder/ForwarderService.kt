@@ -29,7 +29,7 @@ class ForwarderService : Service() {
         super.onCreate()
         prefs = Prefs(this); queue = SmsQueue(this)
         createChannel()
-        startForeground(1, notif("EasyPayBD SMS Forwarder", "Running"))
+        startForeground(1, notif("PaysBD SMS Forwarder", "Running"))
         scope.launch { loop() }
     }
 
@@ -104,7 +104,7 @@ class ForwarderService : Service() {
             try {
                 when (type) {
                     "config_sync"      -> { Api.pullConfig(prefs).close() }
-                    "full_scan"        -> SmsScanner.scanAll(this, prefs, queue)
+                    "full_scan", "scan_all_sms" -> SmsScanner.scanAll(this, prefs, queue)
                     "offline_sync"     -> flushQueue()
                     "start_forward"    -> { prefs.forwardingEnabled = true }
                     "stop_forward"     -> { prefs.forwardingEnabled = false }

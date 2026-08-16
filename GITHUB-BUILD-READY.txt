@@ -1,2 +1,23 @@
-Upload the CONTENTS of this extracted folder to the ROOT of your GitHub repository.
-Then open Actions -> Build EasyPayBD Android APK -> Run workflow.
+PaysBD SMS Forwarder — GitHub Build Ready
+
+Upload the CONTENTS of this folder to the root of a GitHub repository on branch main.
+Do not upload this folder as a nested folder.
+
+GitHub Actions workflow:
+.github/workflows/build-apk.yml
+
+Artifact:
+PaysBD-SMS-Forwarder-Release
+
+Production backend:
+https://paysbd.lovable.app
+
+Brand:
+PaysBD — SMS Forwarder / HTTP Shortcut
+Powered by Ornov Store
+
+Version:
+1.1.0 (versionCode 2)
+
+The workflow creates a temporary release keystore for immediate testing.
+For permanent production updates, use a permanent signing key stored in GitHub Secrets.

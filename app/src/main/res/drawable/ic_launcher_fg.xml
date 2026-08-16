@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#7FFFB1"
-        android:pathData="M54,20 L82,54 L54,88 L26,54 Z"/>
-    <path android:fillColor="#0B1220"
-        android:pathData="M54,38 L70,54 L54,70 L38,54 Z"/>
-</vector>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/paysbd_logo" android:gravity="center" android:width="108dp" android:height="108dp" />
+</layer-list>

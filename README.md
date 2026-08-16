@@ -1,24 +1,41 @@
-# EasyPayBD SMS Forwarder — Android Source
+# PaysBD SMS Forwarder
 
-Complete Android Studio project source that wires to the EasyPayBD website endpoints (`/api/public/device-config`, `/sms-ingest`, `/device-commands`, `/device-log`, `/device-heartbeat`, `/app-release`).
+Professional Android SMS Forwarder with HTTP Shortcut export, powered by Ornov Store.
 
-## Build
-1. Open this folder in **Android Studio (Hedgehog+)**.
-2. Change `BASE_URL` in `app/src/main/java/com/easypaybd/smsforwarder/Config.kt` to your website URL (default: `https://easypaybd.lovable.app`).
-3. Sync Gradle, then **Build > Build APK(s)** or `./gradlew assembleRelease`.
+## Production backend
 
-## Features (matches admin panel spec)
-- Splash with animated big logo (from https://i.postimg.cc/7hbf6hfM/Chat-GPT-Image-Aug-14-2026-12-11-48-PM.png)
-- Fields: Name, Description, Sender filter (any / number / `*`), Webhook URL
-- Advanced: SIM slot (any / SIM 1 / SIM 2 …), JSON Payload Template, Headers, Retries (default 10), Ignore SSL, Chunked mode
-- Save / Cancel
-- Big animated **Run** ring button; shows connected / 402 / 403 etc.
-- Top-right **Heartbeat** shortcut
-- Background `ForegroundService` + `SmsReceiver` forwards every SMS to your webhook
-- Polls `/device-commands` every 30s for the 10 remote features
-- Reports device model, sim count, sim info, app version via heartbeat
-- Auto-syncs offline SMS when internet returns
-- Auto-update check via `/app-release`
+`https://paysbd.lovable.app`
 
-## Endpoint contract used
-Headers on every call: `x-device-id`, `x-device-secret` (set in-app first run).
+The app uses these production endpoints:
+
+- `/api/public/device-config`
+- `/api/public/sms-ingest`
+- `/api/public/device-commands`
+- `/api/public/device-log`
+- `/api/public/device-heartbeat`
+- `/api/public/app-release`
+- `/api/public/device-enroll`
+- `/api/public/app-about`
+
+Authentication uses `x-device-id` and `x-device-secret`.
+
+## Build on GitHub
+
+1. Create a new GitHub repository.
+2. Upload **all files in this repository root** (do not upload the outer ZIP folder as a nested directory).
+3. Commit to `main`.
+4. Open **Actions** → **Build PaysBD SMS Forwarder APK**.
+5. Wait for the workflow to finish.
+6. Open the completed workflow run → **Artifacts** → `PaysBD-SMS-Forwarder-Release`.
+7. Download the APK and install it on the Android device.
+
+### Important signing note
+
+The included workflow creates a temporary release keystore so the repository can build immediately. For long-term production updates, replace this with a permanent signing key stored in GitHub Actions Secrets. Do not commit a keystore or passwords to GitHub.
+
+## Branding
+
+- PaysBD
+- SMS Forwarder
+- HTTP Shortcut
+- Powered by Ornov Store

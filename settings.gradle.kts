@@ -5,5 +5,5 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories { google(); mavenCentral() }
 }
-rootProject.name = "EasyPayBD SMS Forwarder"
+rootProject.name = "PaysBD SMS Forwarder"
 include(":app")

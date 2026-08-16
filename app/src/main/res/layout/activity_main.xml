@@ -18,7 +18,7 @@
         </RelativeLayout>
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="EasyPayBD SMS Forwarder" android:textColor="#FFFFFF"
+            android:text="PaysBD SMS Forwarder" android:textColor="#FFFFFF"
             android:textSize="22sp" android:textStyle="bold" android:layout_marginTop="12dp"/>
 
         <TextView android:id="@+id/deviceIdView" android:layout_width="wrap_content"
@@ -27,7 +27,21 @@
             android:layout_height="wrap_content" android:textColor="#8AB4FF" android:textSize="12sp"
             android:layout_marginBottom="12dp"/>
 
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <Button android:id="@+id/importBtn" android:text="Import"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+            <Button android:id="@+id/exportBtn" android:text="Export"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginStart="8dp"/>
+            <Button android:id="@+id/aboutBtn" android:text="About"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
         <include layout="@layout/section_form"/>
+
 
         <LinearLayout android:orientation="horizontal"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -48,5 +62,10 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="12dp" android:textColor="#7FFFB1" android:textSize="14sp"
             android:text="Idle"/>
+
+        <include layout="@layout/powered_by_ornov_store"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
     </LinearLayout>
 </ScrollView>

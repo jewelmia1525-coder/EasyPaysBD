@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/poweredByOrnov"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/ring_bg"
+    android:paddingStart="12dp" android:paddingEnd="14dp"
+    android:paddingTop="6dp" android:paddingBottom="6dp">
+
+    <ImageView
+        android:id="@+id/ornovLogo"
+        android:layout_width="28dp" android:layout_height="28dp"
+        android:src="@drawable/paysbd_logo"
+        android:scaleType="centerCrop"
+        android:contentDescription="PaysBD powered by Ornov Store"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="PAYSBD · SMS FORWARD"
+            android:letterSpacing="0.10"
+            android:textColor="#7C8AA5" android:textSize="8sp" android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Powered by Ornov Store"
+            android:textColor="#FFA24C" android:textSize="12sp" android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

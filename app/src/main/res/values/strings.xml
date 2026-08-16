@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">EasyPayBD SMS Forwarder</string>
+    <string name="app_name">PaysBD SMS Forwarder</string>
+    <string name="app_brand">PaysBD</string>
+    <string name="powered_by">Powered by Ornov Store</string>
+    <string name="app_description">Professional SMS Forwarder &amp; HTTP Shortcut</string>
 </resources>

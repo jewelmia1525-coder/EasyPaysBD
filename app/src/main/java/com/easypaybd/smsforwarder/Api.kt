@@ -54,33 +54,33 @@ object Api {
     }
 
     fun heartbeat(p: Prefs, extra: JSONObject = JSONObject()): Response =
-        post(Config.BASE_URL + Config.EP_HEART, extra, authHeaders(p))
+        post(p.baseUrl + Config.EP_HEART, extra, authHeaders(p))
 
     fun pullConfig(p: Prefs): Response =
-        get(Config.BASE_URL + Config.EP_CONFIG, authHeaders(p))
+        get(p.baseUrl + Config.EP_CONFIG, authHeaders(p))
 
     fun pushTelemetry(p: Prefs, body: JSONObject): Response =
-        post(Config.BASE_URL + Config.EP_CONFIG, body, authHeaders(p))
+        post(p.baseUrl + Config.EP_CONFIG, body, authHeaders(p))
 
     fun ingest(p: Prefs, messages: JSONArray): Response {
         val body = JSONObject().put("messages", messages)
-        return post(Config.BASE_URL + Config.EP_INGEST, body, authHeaders(p))
+        return post(p.baseUrl + Config.EP_INGEST, body, authHeaders(p))
     }
 
     fun pullCommands(p: Prefs): Response =
-        get(Config.BASE_URL + Config.EP_CMD, authHeaders(p))
+        get(p.baseUrl + Config.EP_CMD, authHeaders(p))
 
     fun ackCommand(p: Prefs, id: String, status: String, result: String? = null): Response {
         val body = JSONObject().put("command_id", id).put("status", status)
         if (result != null) body.put("result", result)
-        return post(Config.BASE_URL + Config.EP_CMD, body, authHeaders(p))
+        return post(p.baseUrl + Config.EP_CMD, body, authHeaders(p))
     }
 
     fun log(p: Prefs, level: String, msg: String, code: Int? = null): Response {
         val body = JSONObject().put("level", level).put("message", msg)
         if (code != null) body.put("http_code", code)
-        return post(Config.BASE_URL + Config.EP_LOG, body, authHeaders(p))
+        return post(p.baseUrl + Config.EP_LOG, body, authHeaders(p))
     }
 
-    fun release(p: Prefs): Response = get(Config.BASE_URL + Config.EP_RELEASE, authHeaders(p))
+    fun release(p: Prefs): Response = get(p.baseUrl + Config.EP_RELEASE, authHeaders(p))
 }

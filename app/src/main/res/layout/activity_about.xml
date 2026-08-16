@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#0B1220" android:padding="20dp">
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <ImageView android:id="@+id/aboutLogo"
+            android:layout_width="220dp" android:layout_height="90dp"
+            android:contentDescription="logo"/>
+
+        <TextView android:id="@+id/aboutTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="PaysBD SMS Forward"
+            android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/aboutAnnouncement"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" android:padding="12dp"
+            android:background="@drawable/ring_bg"
+            android:textColor="#FFD479" android:textSize="14sp" android:visibility="gone"/>
+
+        <TextView android:id="@+id/aboutBody"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="#C7D2FE" android:textSize="15sp"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:text="Premium features"
+            android:textColor="#8AB4FF" android:textSize="13sp" android:textStyle="bold"/>
+
+        <TextView android:id="@+id/aboutFeatures"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="#E5E7EB" android:textSize="14sp"/>
+
+        <TextView android:id="@+id/aboutVersion"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#7FFFB1" android:textSize="13sp"/>
+
+        <include layout="@layout/powered_by_ornov_store"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>

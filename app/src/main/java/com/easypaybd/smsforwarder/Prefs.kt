@@ -14,6 +14,10 @@ class Prefs(ctx: Context) {
         get() = p.getString("device_secret", null) ?: UUID.randomUUID().toString().replace("-", "").also { deviceSecret = it }
         set(v) { p.edit().putString("device_secret", v).apply() }
 
+    var baseUrl: String get() = p.getString("base_url", Config.BASE_URL) ?: Config.BASE_URL; set(v) { p.edit().putString("base_url", v.trimEnd('/')).apply() }
+    var featuresJson: String get() = p.getString("features", "{}") ?: "{}"; set(v) { p.edit().putString("features", v).apply() }
+    fun feature(key: String, def: Boolean = false): Boolean = runCatching { org.json.JSONObject(featuresJson).optBoolean(key, def) }.getOrDefault(def)
+
     var name: String get() = p.getString("name", "") ?: ""; set(v) { p.edit().putString("name", v).apply() }
     var description: String get() = p.getString("description", "") ?: ""; set(v) { p.edit().putString("description", v).apply() }
     var senderFilter: String get() = p.getString("sender", "*") ?: "*"; set(v) { p.edit().putString("sender", v).apply() }
